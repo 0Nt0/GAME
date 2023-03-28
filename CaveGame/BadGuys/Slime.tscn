@@ -1,0 +1,919 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://MYGAMESPRITES/Slime/Normal/spritesheet/pngs/FULL_SHEET.png" type="Texture" id=1]
+[ext_resource path="res://BadGuys/Slime.gd" type="Script" id=2]
+[ext_resource path="res://WonderTimer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/btree/script/btree.gd" type="Script" id=4]
+[ext_resource path="res://Player/HurtBox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://BadGuys/PlayerDetection.tscn" type="PackedScene" id=6]
+[ext_resource path="res://BadGuys/EnemyDetection.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Player/HitBox.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Slime_Attack"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 45, 46, 47, 48 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Slime_Down"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 15, 16, 17, 18, 19 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Slime_Hit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 20, 21, 22, 23, 24 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Slime_Idal"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 45, 46 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Slime_Left"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 10, 11, 12, 13, 14 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Slime_Right"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 5, 6, 7, 8, 9 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Slime_Up"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "Slime_die"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 49, 50, 51, 52, 53 ]
+}
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 14.0
+
+[sub_resource type="CircleShape2D" id=11]
+radius = 62.482
+
+[sub_resource type="CircleShape2D" id=12]
+radius = 62.6498
+
+[sub_resource type="CircleShape2D" id=13]
+radius = 7.28011
+
+[node name="Slime" type="KinematicBody2D"]
+collision_layer = 4
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 64
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite")
+anims/RESET = SubResource( 1 )
+anims/Slime_Attack = SubResource( 2 )
+anims/Slime_Down = SubResource( 3 )
+anims/Slime_Hit = SubResource( 4 )
+anims/Slime_Idal = SubResource( 5 )
+anims/Slime_Left = SubResource( 6 )
+anims/Slime_Right = SubResource( 7 )
+anims/Slime_Up = SubResource( 8 )
+anims/Slime_die = SubResource( 9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 11, 15, -12, 15, -12, 11, 11, 11 )
+
+[node name="WonderTimer" parent="." instance=ExtResource( 3 )]
+
+[node name="BTREE" type="Node" parent="."]
+script = ExtResource( 4 )
+tree = {
+"connection": [ {
+"from": "root",
+"from_port": 0,
+"to": "selector",
+"to_port": 0
+}, {
+"from": "selector",
+"from_port": 0,
+"to": "task",
+"to_port": 0
+}, {
+"from": "selector",
+"from_port": 1,
+"to": "selector2",
+"to_port": 0
+}, {
+"from": "selector2",
+"from_port": 0,
+"to": "sequence",
+"to_port": 0
+}, {
+"from": "selector2",
+"from_port": 1,
+"to": "sequence2",
+"to_port": 0
+}, {
+"from": "sequence",
+"from_port": 1,
+"to": "task2",
+"to_port": 0
+}, {
+"from": "sequence",
+"from_port": 0,
+"to": "task3",
+"to_port": 0
+}, {
+"from": "sequence2",
+"from_port": 0,
+"to": "task4",
+"to_port": 0
+}, {
+"from": "sequence2",
+"from_port": 1,
+"to": "task5",
+"to_port": 0
+}, {
+"from": "sequence2",
+"from_port": 2,
+"to": "task6",
+"to_port": 0
+} ],
+"nodes": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_wander_around",
+"offset": Vector2( 280, -200 ),
+"params": [  ],
+"size": Vector2( 349, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Check_Health",
+"offset": Vector2( 680, -120 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Chase_Player",
+"offset": Vector2( 700, -20 ),
+"params": [  ],
+"size": Vector2( 349, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 480, -80 ),
+"size": Vector2( 138, 109 ),
+"title": "sequence"
+},
+"name": "sequence",
+"type": 2
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Check_Health",
+"offset": Vector2( 680, 120 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Check_For_Other_BadGuys",
+"offset": Vector2( 680, 220 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Run_From_Player",
+"offset": Vector2( 680, 320 ),
+"params": [  ],
+"size": Vector2( 357, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 480, 140 ),
+"size": Vector2( 138, 136 ),
+"title": "sequence"
+},
+"name": "sequence2",
+"type": 2
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 306.624, 32.082 ),
+"size": Vector2( 126, 109 ),
+"title": "selector"
+},
+"name": "selector2",
+"type": 3
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 120, -60 ),
+"size": Vector2( 126, 109 ),
+"title": "selector"
+},
+"name": "selector",
+"type": 3
+} ],
+"data": {
+"offset": Vector2( 0, 0 ),
+"size": Vector2( 83, 60.0027 )
+},
+"name": "root",
+"type": 0
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_wander_around",
+"offset": Vector2( 280, -200 ),
+"params": [  ],
+"size": Vector2( 349, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Check_Health",
+"offset": Vector2( 680, -120 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Chase_Player",
+"offset": Vector2( 700, -20 ),
+"params": [  ],
+"size": Vector2( 349, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 480, -80 ),
+"size": Vector2( 138, 109 ),
+"title": "sequence"
+},
+"name": "sequence",
+"type": 2
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Check_Health",
+"offset": Vector2( 680, 120 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Check_For_Other_BadGuys",
+"offset": Vector2( 680, 220 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Run_From_Player",
+"offset": Vector2( 680, 320 ),
+"params": [  ],
+"size": Vector2( 357, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 480, 140 ),
+"size": Vector2( 138, 136 ),
+"title": "sequence"
+},
+"name": "sequence2",
+"type": 2
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 306.624, 32.082 ),
+"size": Vector2( 126, 109 ),
+"title": "selector"
+},
+"name": "selector2",
+"type": 3
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 120, -60 ),
+"size": Vector2( 126, 109 ),
+"title": "selector"
+},
+"name": "selector",
+"type": 3
+}, {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_wander_around",
+"offset": Vector2( 280, -200 ),
+"params": [  ],
+"size": Vector2( 349, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Check_Health",
+"offset": Vector2( 680, -120 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Chase_Player",
+"offset": Vector2( 700, -20 ),
+"params": [  ],
+"size": Vector2( 349, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 480, -80 ),
+"size": Vector2( 138, 109 ),
+"title": "sequence"
+},
+"name": "sequence",
+"type": 2
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Check_Health",
+"offset": Vector2( 680, 120 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Check_For_Other_BadGuys",
+"offset": Vector2( 680, 220 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Run_From_Player",
+"offset": Vector2( 680, 320 ),
+"params": [  ],
+"size": Vector2( 357, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 480, 140 ),
+"size": Vector2( 138, 136 ),
+"title": "sequence"
+},
+"name": "sequence2",
+"type": 2
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 306.624, 32.082 ),
+"size": Vector2( 126, 109 ),
+"title": "selector"
+},
+"name": "selector2",
+"type": 3
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Check_Health",
+"offset": Vector2( 680, 120 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Check_For_Other_BadGuys",
+"offset": Vector2( 680, 220 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Run_From_Player",
+"offset": Vector2( 680, 320 ),
+"params": [  ],
+"size": Vector2( 357, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 480, 140 ),
+"size": Vector2( 138, 136 ),
+"title": "sequence"
+},
+"name": "sequence2",
+"type": 2
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Check_Health",
+"offset": Vector2( 680, -120 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Chase_Player",
+"offset": Vector2( 700, -20 ),
+"params": [  ],
+"size": Vector2( 349, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 480, -80 ),
+"size": Vector2( 138, 109 ),
+"title": "sequence"
+},
+"name": "sequence",
+"type": 2
+}, {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Chase_Player",
+"offset": Vector2( 700, -20 ),
+"params": [  ],
+"size": Vector2( 349, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Check_Health",
+"offset": Vector2( 680, -120 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Check_Health",
+"offset": Vector2( 680, 120 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Check_For_Other_BadGuys",
+"offset": Vector2( 680, 220 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Run_From_Player",
+"offset": Vector2( 680, 320 ),
+"params": [  ],
+"size": Vector2( 357, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+} ],
+"root": {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_wander_around",
+"offset": Vector2( 280, -200 ),
+"params": [  ],
+"size": Vector2( 349, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Check_Health",
+"offset": Vector2( 680, -120 ),
+"params": [  ],
+"size": Vector2( 333, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task3",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Chase_Player",
+"offset": Vector2( 700, -20 ),
+"params": [  ],
+"size": Vector2( 349, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 480, -80 ),
+"size": Vector2( 138, 109 ),
+"title": "sequence"
+},
+"name": "sequence",
+"type": 2
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Check_Health",
+"offset": Vector2( 680, 120 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task4",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Check_For_Other_BadGuys",
+"offset": Vector2( 680, 220 ),
+"params": [  ],
+"size": Vector2( 420, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task5",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"count": 0,
+"fn": "task_Run_From_Player",
+"offset": Vector2( 680, 320 ),
+"params": [  ],
+"size": Vector2( 357, 85 ),
+"title": "task",
+"values": [  ]
+},
+"name": "task6",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 480, 140 ),
+"size": Vector2( 138, 136 ),
+"title": "sequence"
+},
+"name": "sequence2",
+"type": 2
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 306.624, 32.082 ),
+"size": Vector2( 126, 109 ),
+"title": "selector"
+},
+"name": "selector2",
+"type": 3
+} ],
+"data": {
+"count": 2,
+"offset": Vector2( 120, -60 ),
+"size": Vector2( 126, 109 ),
+"title": "selector"
+},
+"name": "selector",
+"type": 3
+} ],
+"data": {
+"offset": Vector2( 0, 0 ),
+"size": Vector2( 83, 60.0027 )
+},
+"name": "root",
+"type": 0
+}
+}
+_tree_id = "2249161381215533367"
+
+[node name="HurtBox" parent="." instance=ExtResource( 5 )]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+position = Vector2( -1, 8 )
+shape = SubResource( 10 )
+
+[node name="PlayerDetection" parent="." instance=ExtResource( 6 )]
+
+[node name="CollisionShape2D" parent="PlayerDetection" index="0"]
+position = Vector2( -1, 8 )
+shape = SubResource( 11 )
+
+[node name="EnemyDetection" parent="." instance=ExtResource( 7 )]
+collision_mask = 24
+
+[node name="CollisionShape2D" parent="EnemyDetection" index="0"]
+position = Vector2( 0, 8 )
+shape = SubResource( 12 )
+
+[node name="HitBox" parent="." instance=ExtResource( 8 )]
+collision_mask = 256
+
+[node name="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2( -1, 8 )
+shape = SubResource( 13 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
+
+[editable path="HurtBox"]
+[editable path="PlayerDetection"]
+[editable path="EnemyDetection"]
+[editable path="HitBox"]

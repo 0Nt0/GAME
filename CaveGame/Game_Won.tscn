@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://MYGAMESPRITES/stuff/Map_background.png" type="Texture" id=1]
+[ext_resource path="res://MYGAMESPRITES/MC/Spritesheet/FULL/MC_FULL.png" type="Texture" id=2]
+
+[node name="Game_Won" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 140, 70 )
+scale = Vector2( 10.0625, 5.71875 )
+texture = ExtResource( 1 )
+offset = Vector2( 2.0676, 3.54545 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 176, 114 )
+scale = Vector2( 4.8125, 3.09375 )
+
+[node name="Label" type="Label" parent="Sprite2"]
+margin_left = -31.1688
+margin_top = -31.3535
+margin_right = 38.8312
+margin_bottom = -0.353535
+text = "you won!
+"
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 164, 119 )
+scale = Vector2( 2.84375, 2.875 )
+texture = ExtResource( 2 )
+hframes = 42
+frame = 6

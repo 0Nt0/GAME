@@ -1,0 +1,98 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://MYGAMESPRITES/stuff/Map_background.png" type="Texture" id=1]
+[ext_resource path="res://MYGAMESPRITES/stuff/Lv_Select.png" type="Texture" id=2]
+[ext_resource path="res://MYGAMESPRITES/stuff/Home_Base.png" type="Texture" id=3]
+[ext_resource path="res://Lv_1.gd" type="Script" id=4]
+[ext_resource path="res://Lv_2.gd" type="Script" id=5]
+[ext_resource path="res://LV_3.gd" type="Script" id=6]
+[ext_resource path="res://Lv_4.gd" type="Script" id=7]
+[ext_resource path="res://LV_6.gd" type="Script" id=8]
+[ext_resource path="res://Map.gd" type="Script" id=9]
+
+[node name="Map" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="BackGround" type="Sprite" parent="."]
+position = Vector2( 160, 92 )
+scale = Vector2( 10, 5.75 )
+texture = ExtResource( 1 )
+
+[node name="Lv_1" type="TextureButton" parent="."]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 48.0
+margin_bottom = 56.0
+texture_normal = ExtResource( 3 )
+script = ExtResource( 4 )
+
+[node name="Main_Cave" type="Label" parent="."]
+margin_left = 8.0
+margin_top = 48.0
+margin_right = 72.0
+margin_bottom = 62.0
+text = "Main cave"
+
+[node name="Lv_2" type="TextureButton" parent="."]
+margin_left = 80.0
+margin_top = 32.0
+margin_right = 120.0
+margin_bottom = 72.0
+disabled = true
+texture_normal = ExtResource( 2 )
+script = ExtResource( 5 )
+
+[node name="Main_Cave2" type="Label" parent="."]
+margin_left = 72.0
+margin_top = 64.0
+margin_right = 136.0
+margin_bottom = 78.0
+text = "Level 1"
+
+[node name="LV_3" type="TextureButton" parent="."]
+margin_left = 222.0
+margin_top = 32.0
+margin_right = 266.0
+margin_bottom = 72.0
+disabled = true
+texture_normal = ExtResource( 2 )
+script = ExtResource( 6 )
+
+[node name="Main_Cave3" type="Label" parent="."]
+margin_left = 216.0
+margin_top = 64.0
+margin_right = 280.0
+margin_bottom = 88.0
+text = "Level 2"
+
+[node name="Lv_4" type="TextureButton" parent="."]
+margin_left = 80.0
+margin_top = 104.0
+margin_right = 120.0
+margin_bottom = 144.0
+disabled = true
+texture_normal = ExtResource( 2 )
+script = ExtResource( 7 )
+
+[node name="Main_Cave4" type="Label" parent="."]
+margin_left = 72.0
+margin_top = 136.0
+margin_right = 136.0
+margin_bottom = 150.0
+text = "Level 3"
+
+[node name="LV_6" type="TextureButton" parent="."]
+margin_left = 226.0
+margin_top = 104.0
+margin_right = 266.0
+margin_bottom = 144.0
+disabled = true
+texture_normal = ExtResource( 2 )
+script = ExtResource( 8 )
+
+[node name="Main_Cave5" type="Label" parent="."]
+margin_left = 216.0
+margin_top = 136.0
+margin_right = 280.0
+margin_bottom = 150.0
+text = "Level 4"
